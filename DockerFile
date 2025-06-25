@@ -1,0 +1,14 @@
+# Use official Python base image
+FROM python:3.10
+
+# Set working directory
+WORKDIR /app
+
+# Copy source files into container
+COPY src/ .
+
+# Install required libraries
+RUN pip install flask requests
+
+# Default command to run the Flask node
+CMD ["python", "service_node.py"]
